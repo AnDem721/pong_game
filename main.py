@@ -15,7 +15,7 @@ screen.tracer(0)
 paddle1 = Paddle((350, 0))
 paddle2 = Paddle((-350, 0))
 ball = Ball()
-score2 = Scoreboard()
+score = Scoreboard()
 
 screen.listen()
 screen.onkey(fun=paddle1.move_up, key='Up')
@@ -42,9 +42,9 @@ while game_on:
 
     if ball.xcor() > 400: 
         ball.reset_ball()
-        score2.paddle2_point()
+        score.paddle2_point()
     
     if ball.xcor() < -400:
         ball.reset_ball()
-        score2.paddle1_point()
+        score.paddle1_point()
 screen.exitonclick()
